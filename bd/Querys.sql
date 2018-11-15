@@ -2,8 +2,8 @@
 
 INSERT INTO 
 	`tb_fato_led`(`ID_FATO_LED`, `DT_INICIO`, `DT_FIM`, `INTERVALO_TEMPO`, `ID_LED`, `CONSUMO`, `VALOR`) 
- VALUES 
- 	(NULL, NOW(), NULL, NULL, 2, NULL, NULL)
+VALUES 
+ 	(NULL, NOW(), NULL, NULL, /*Id do LED que foi ligado*/, NULL, NULL)
 
 --BUSCA ID_FATO_LED
 
@@ -12,7 +12,7 @@ SELECT
 FROM
     TB_FATO_LED
 WHERE
-    ID_LED = --VEM DO ARDUINO
+    ID_LED = --Id do LED que foi apagado
 
 --APAGA LED
 
@@ -27,7 +27,7 @@ SET
             FROM 
                 tb_led 
             WHERE 
-                ID_LED = --VEM DO ARDUINO
+                ID_LED = /*Id do LED que foi apagado*/
         ),
     `VALOR` = ((NOW() - DT_INICIO) * (
             SELECT 
@@ -35,7 +35,7 @@ SET
             FROM 
                 tb_led 
             WHERE 
-                ID_LED = 2
-        )) * 0.5
+                ID_LED = /*Id do LED que foi apagado*/
+        )) * /*Valor em R$ por energia 0,001*/
 WHERE
-	ID_FATO_LED = BUSCA ID_FATO_LED
+	ID_FATO_LED = --BUSCA ID_FATO_LED
