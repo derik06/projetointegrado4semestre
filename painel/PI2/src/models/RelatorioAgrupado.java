@@ -1,29 +1,27 @@
 package models;
 
-import java.sql.Time;
-import java.util.Date;
 
 public class RelatorioAgrupado {
-	private Date data;
+	private String data;
 	private int consumo;
 	private double valor;
-	private Time intervaloTempo;
+	private String intervaloTempo;
 	
 	public RelatorioAgrupado() {
 		
 	}
 	
-	public RelatorioAgrupado(Date data, int consumo, double valor, Time intervaloTempo) {
+	public RelatorioAgrupado(String data, int consumo, double valor, String intervaloTempo) {
 		this.data = data;
 		this.consumo = consumo;
 		this.valor = valor;
 		this.intervaloTempo = intervaloTempo;
 	}
 	
-	public Date getData() {
+	public String getData() {
 		return data;
 	}
-	public void setData(Date data) {
+	public void setData(String data) {
 		this.data = data;
 	}
 	public int getConsumo() {
@@ -38,10 +36,10 @@ public class RelatorioAgrupado {
 	public void setValor(double valor) {
 		this.valor = valor;
 	}
-	public Time getIntervaloTempo() {
+	public String getIntervaloTempo() {
 		return intervaloTempo;
 	}
-	public void setIntervaloTempo(Time intervaloTempo) {
+	public void setIntervaloTempo(String intervaloTempo) {
 		this.intervaloTempo = intervaloTempo;
 	}
 }

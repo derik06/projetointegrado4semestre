@@ -1,19 +1,17 @@
 package models;
 
-import java.sql.Time;
-
 public class RelatorioDetalhado {
 	private int idLed;
 	private int potencia;
 	private int consumo;
 	private double valor;
-	private Time intervaloTempo;
+	private String intervaloTempo;
 	
 	public RelatorioDetalhado() {
 		
 	}
 	
-	public RelatorioDetalhado(int idLed, int potencia, int consumo, double valor, Time intervaloTempo) {
+	public RelatorioDetalhado(int idLed, int potencia, int consumo, double valor, String intervaloTempo) {
 		this.idLed = idLed;
 		this.potencia = potencia;
 		this.consumo = consumo;
@@ -45,10 +43,10 @@ public class RelatorioDetalhado {
 	public void setValor(double valor) {
 		this.valor = valor;
 	}
-	public Time getIntervaloTempo() {
+	public String getIntervaloTempo() {
 		return intervaloTempo;
 	}
-	public void setIntervaloTempo(Time intervaloTempo) {
+	public void setIntervaloTempo(String intervaloTempo) {
 		this.intervaloTempo = intervaloTempo;
 	}
 }
