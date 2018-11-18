@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry excluding="dao/" kind="src" path="projeto-4-semestre-arduino/src"/>
+	<classpathentry kind="src" path="projeto-4-semestre-arduino/src/dao"/>
+	<classpathentry kind="lib" path="projeto-4-semestre-arduino/lib/mysqlconnectorjava5130.jar"/>
+	<classpathentry kind="lib" path="projeto-4-semestre-arduino/lib/RXTXcomm.jar"/>
+	<classpathentry kind="output" path="projeto-4-semestre-arduino/out/production/projeto-4-semestre-arduino"/>
+</classpath>
