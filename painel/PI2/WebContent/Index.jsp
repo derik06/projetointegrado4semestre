@@ -15,8 +15,8 @@
 		<div class="container">
 			<h1>Home</h1>
 			<p>Escolha a forma de relatorio que deseja extrair. Por um periodo especifico ou diario, mensal e anual</p>
-			<button href=".jsp">Padrão</button>
-			<button href=".jsp">Personalizado</button>
+			<button href="Padrao.jsp">Padrão</button>
+			<button href="Personalizado.jsp">Personalizado</button>
 		</div>
 		<script src="js/jquery.min.js"></script>
 		<script src="js/bootstrap.min.js"></script>

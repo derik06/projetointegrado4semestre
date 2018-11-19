@@ -17,6 +17,7 @@ public class ConnectionFactory {
 	}
 	
 	public static Connection obtemConexao() throws SQLException {
+		fecharConexao();
 		if (conn.get() == null){
 			conn.set(DriverManager
 					.getConnection("jdbc:mysql://localhost/dbpi2?user=root&password="));

@@ -14,8 +14,8 @@
 	 		</div>             
 	 		<div id="navbar" class="navbar-collapse collapse">                 
 	 			<ul class="nav navbar-nav">                     
-	 				<li><a href=".jsp">Padrão</a></li> 
-	 				<li><a href=".jsp">Personalizado</a></li>          
+	 				<li><a href="Padrao.jsp">Padrão</a></li> 
+	 				<li><a href="Personalizado.jsp">Personalizado</a></li>          
 	            </ul>             
 	   		</div>
 	   </div>     

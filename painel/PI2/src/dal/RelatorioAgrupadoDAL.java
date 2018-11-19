@@ -20,8 +20,8 @@ public class RelatorioAgrupadoDAL {
 						"FROM \r\n" + 
 						"	`tb_fato_led`\r\n" + 
 						"WHERE \r\n" + 
-						"	A.DT_INICIO > '"+dtInicial+"'\r\n" + 
-						"   AND A.DT_FIM < '"+dtFim+"'\r\n" + 
+						"	DT_INICIO > '"+dtInicial+"'\r\n" + 
+						"   AND DT_FIM < '"+dtFim+"'\r\n" + 
 						"GROUP BY \r\n" + 
 						"    year(DT_INICIO), \r\n" + 
 						"    month(DT_INICIO), \r\n" + 
@@ -32,10 +32,10 @@ public class RelatorioAgrupadoDAL {
 			try (ResultSet rs = stm.executeQuery();) {
 				while(rs.next()) {
 					RelatorioAgrupado relatorioAgrupado = new RelatorioAgrupado();
-					relatorioAgrupado.setData("DT_INCIO");
-					relatorioAgrupado.setConsumo(Integer.parseInt("CONSUMO"));
-					relatorioAgrupado.setValor(Double.parseDouble("VALOR"));
-					relatorioAgrupado.setIntervaloTempo("INTERVALO_TEMPO");
+					relatorioAgrupado.setData(rs.getString("DT_INICIO"));
+					relatorioAgrupado.setConsumo(rs.getInt(("CONSUMO")));
+					relatorioAgrupado.setValor(rs.getDouble("VALOR"));
+					relatorioAgrupado.setIntervaloTempo(rs.getString("INTERVALO_TEMPO"));
 					relatorioAgrupadoLista.add(relatorioAgrupado);
 				}
 			} catch (SQLException e) {

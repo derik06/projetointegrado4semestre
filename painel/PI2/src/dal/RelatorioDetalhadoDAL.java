@@ -23,8 +23,8 @@ public class RelatorioDetalhadoDAL {
 						"    	INNER JOIN tb_led B\r\n" + 
 						"        	ON A.ID_LED = B.ID_LED \r\n" + 
 						"WHERE \r\n" + 
-						"	A.DT_INICIO > '"+dtInicial+"'\r\n" + 
-						"    AND A.DT_FIM < '"+dtFim+"'\r\n" + 
+						"	A.DT_INICIO >= '"+dtInicial+"'\r\n" + 
+						"    AND A.DT_FIM <= '"+dtFim+"'\r\n" + 
 						"GROUP BY \r\n" + 
 						"	ID_LED";
 		
@@ -33,11 +33,11 @@ public class RelatorioDetalhadoDAL {
 			try (ResultSet rs = stm.executeQuery();) {
 				while(rs.next()) {
 					RelatorioDetalhado relatorioDetalhado = new RelatorioDetalhado();
-					relatorioDetalhado.setIdLed(Integer.parseInt("ID_LED"));
-					relatorioDetalhado.setPotencia(Integer.parseInt("POTENCIA"));
-					relatorioDetalhado.setConsumo(Integer.parseInt("CONSUMO"));
-					relatorioDetalhado.setValor(Double.parseDouble("VALOR"));
-					relatorioDetalhado.setIntervaloTempo("INTERVALO_TEMPO");
+					relatorioDetalhado.setIdLed(rs.getInt("ID_LED"));
+					relatorioDetalhado.setPotencia(rs.getInt("POTENCIA"));
+					relatorioDetalhado.setConsumo(rs.getInt("CONSUMO"));
+					relatorioDetalhado.setValor(rs.getDouble("VALOR"));
+					relatorioDetalhado.setIntervaloTempo(rs.getString("INTERVALO_TEMPO"));
 					relatorioDetalhadoLista.add(relatorioDetalhado);
 				}
 			} catch (SQLException e) {

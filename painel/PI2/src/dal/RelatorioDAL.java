@@ -18,16 +18,16 @@ public class RelatorioDAL {
 						"FROM \r\n" + 
 						"	 tb_fato_led\r\n" + 
 						"WHERE \r\n" +  
-						"	DT_INICIO > '"+dtInicial+"'\r\n" + 
-						"   AND DT_FIM < '"+dtFim+"'";
+						"	DT_INICIO >= '"+dtInicial+"'\r\n" + 
+						"   AND DT_FIM <= '"+dtFim+"'";
 		
 		try (Connection conn = ConnectionFactory.obtemConexao();
 				PreparedStatement stm = conn.prepareStatement(query);) {
 			try (ResultSet rs = stm.executeQuery();) {
 				while(rs.next()) {
-					relatorio.setConsumo(Integer.parseInt("CONSUMO"));
-					relatorio.setValor(Double.parseDouble("VALOR"));
-					relatorio.setIntervaloTempo("INTERVALO_TEMPO");
+					relatorio.setConsumo(rs.getInt("CONSUMO"));
+					relatorio.setValor(rs.getDouble("VALOR"));
+					relatorio.setIntervaloTempo(rs.getString("INTERVALO_TEMPO"));
 				}
 			} catch (SQLException e) {
 				e.printStackTrace();
